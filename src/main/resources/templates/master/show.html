@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/show.css">
+    <title>Show Master</title>
+</head>
+<body>
+
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <h1>Master</h1>
+                    <div class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item" th:text="${master.getName()}">Name</p>
+                    </div>
+                    <div class="item-show">
+                        <div class="text-item-descr">Surname:</div>
+                        <p class="text-item" th:text="${master.getSurname()}">Surname</p>
+                    </div>
+                    <div class="item-show">
+                        <div class="text-item-descr">Phonenumber:</div>
+                        <p class="text-item" th:text="${master.getPhonenumber()}">Phone Number</p>
+                    </div>
+                    <div class="item-show">
+                        <div class="text-item-descr">Email:</div>
+                        <p class="text-item" th:text="${master.getEmail()}">Email</p>
+                    </div>
+                    <dev class="buttum-wrapper">
+                        <form th:method="DELETE" th:action="@{/master/{id}(id=${master.getId()})}">
+                            <input class="buttum" type="submit" value="Delete!">
+                        </form>
+                        <form th:method="GET" th:action="@{/master/{id}/edit(id=${master.getId()})}">
+                            <input class="buttum" type="submit" value="Edit!">
+                        </form>
+                    </dev>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/store.css">
+    <title>Your Order!</title>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">Computer Workshop</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link" href="/global">Admin</a>
+                        <a class="header-nav-link active" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div th:if="${orders!=null}">
+                        <h1>Order</h1>
+                        <div th:if="${orders.getId()!=null}" class="item-show">
+                            <div class="text-item-descr">Id:</div>
+                            <p class="text-item-value" th:text="${orders.getId()}">Id</p>
+                        </div>
+                        <div th:if="${orders.getPrice()!=null}" class="item-show">
+                            <div class="text-item-descr">Date:</div>
+                            <p class="text-item-value" th:text="${orders.getDateorder()}">Date</p>
+                        </div>
+                        <div th:if="${orders.getPrice()!=null}" class="item-show">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value" th:text="${orders.getPrice()}">Price</p>
+                        </div>
+                        <h2>Computer</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getDescription()}">
+                                Description</p>
+                        </div>
+                        <h2>Board</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getBoardowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getBoardowner().getName()}">
+                                Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getBoardowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getBoardowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getBoardowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getBoardowner().getDescription()}">Description</p>
+                        </div>
+                        <h2>Case</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCaseowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getCaseowner().getName()}">
+                                Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCaseowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getCaseowner().getPrice()}">
+                                Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCaseowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getCaseowner().getDescription()}">Description</p>
+                        </div>
+                        <h2>Cooling System</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCoolingsystemowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getCoolingsystemowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCoolingsystemowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getCoolingsystemowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCoolingsystemowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getCoolingsystemowner().getDescription()}">
+                                Description</p>
+                        </div>
+                        <h2>CPU</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCpuowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getCpuowner().getName()}">
+                                Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCpuowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getCpuowner().getPrice()}">
+                                Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getCpuowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getCpuowner().getDescription()}">Description</p>
+                        </div>
+                        <h2>Graphic Card</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getGraphiccardowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getGraphiccardowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getGraphiccardowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getGraphiccardowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getGraphiccardowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getGraphiccardowner().getDescription()}">
+                                Description</p>
+                        </div>
+                        <h2>Main Memory</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getMainmemoryowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getMainmemoryowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getMainmemoryowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getMainmemoryowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getMainmemoryowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getMainmemoryowner().getDescription()}">
+                                Description</p>
+                        </div>
+                        <h2>Power Supply</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getPowersupplyowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getPowersupplyowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getPowersupplyowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getPowersupplyowner().getPrice()}">Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getPowersupplyowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getPowersupplyowner().getDescription()}">
+                                Description</p>
+                        </div>
+                        <h2>RAM</h2>
+                        <div class="item-show" th:if="${orders.getComputerowner().getRamowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getRamowner().getName()}">
+                                Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getRamowner()!=null}">
+                            <div class="text-item-descr">Price:</div>
+                            <p class="text-item-value" th:text="${orders.getComputerowner().getRamowner().getPrice()}">
+                                Price</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getComputerowner().getRamowner()!=null}">
+                            <div class="text-item-descr">Description:</div>
+                            <p class="text-item-value"
+                               th:text="${orders.getComputerowner().getRamowner().getDescription()}">Description</p>
+                        </div>
+                        <h2>Master</h2>
+                        <div class="item-show" th:if="${orders.getMasterowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getMasterowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getMasterowner()!=null}">
+                            <div class="text-item-descr">Surname:</div>
+                            <p class="text-item-value" th:text="${orders.getMasterowner().getSurname()}">Surname</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getMasterowner()!=null}">
+                            <div class="text-item-descr">Phone number:</div>
+                            <p class="text-item-value" th:text="${orders.getMasterowner().getPhonenumber()}">Phone
+                                number</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getMasterowner()!=null}">
+                            <div class="text-item-descr">Email:</div>
+                            <p class="text-item-value" th:text="${orders.getMasterowner().getEmail()}">Email</p>
+                        </div>
+                        <h2>Buyer</h2>
+                        <div class="item-show" th:if="${orders.getBuyerowner()!=null}">
+                            <div class="text-item-descr">Name:</div>
+                            <p class="text-item-value" th:text="${orders.getBuyerowner().getName()}">Name</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getBuyerowner()!=null}">
+                            <div class="text-item-descr">Surname:</div>
+                            <p class="text-item-value" th:text="${orders.getBuyerowner().getSurname()}">Surname</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getBuyerowner()!=null}">
+                            <div class="text-item-descr">Phone number:</div>
+                            <p class="text-item-value" th:text="${orders.getBuyerowner().getPhonenumber()}">Phone
+                                number</p>
+                        </div>
+                        <div class="item-show" th:if="${orders.getBuyerowner()!=null}">
+                            <div class="text-item-descr">Email:</div>
+                            <p class="text-item-value" th:text="${orders.getBuyerowner().getEmail()}">Email</p>
+                        </div>
+                    </div>
+                    <div th:if="${orders==null}">
+                        <h1>Sorry not this Order</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

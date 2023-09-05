@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/global.css">
+    <title>Global page</title>
+</head>
+<body>
+
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div class="navigator">
+                        <h1>NAVIGATOR</h1>
+                        <form th:method="GET" th:action="@{/board}">
+                            <input class="buttum" type="submit" value="Board!">
+                        </form>
+                        <form th:method="GET" th:action="@{/cases}">
+                            <input class="buttum" type="submit" value="Cases!">
+                        </form>
+                        <form th:method="GET" th:action="@{/coolingsystem}">
+                            <input class="buttum" type="submit" value="Cooling System!">
+                        </form>
+                        <form th:method="GET" th:action="@{/cpu}">
+                            <input class="buttum" type="submit" value="CPU!">
+                        </form>
+                        <form th:method="GET" th:action="@{/graphiccard}">
+                            <input class="buttum" type="submit" value="Graphic Card!">
+                        </form>
+                        <form th:method="GET" th:action="@{/mainmemory}">
+                            <input class="buttum" type="submit" value="Main Memory!">
+                        </form>
+                        <form th:method="GET" th:action="@{/powersupply}">
+                            <input class="buttum" type="submit" value="Power Supply!">
+                        </form>
+                        <form th:method="GET" th:action="@{/ram}">
+                            <input class="buttum" type="submit" value="RAM!">
+                        </form>
+                        <form th:method="GET" th:action="@{/master}">
+                            <input class="buttum" type="submit" value="Master!">
+                        </form>
+                        <form th:method="GET" th:action="@{/buyer}">
+                            <input class="buttum" type="submit" value="Buyer!">
+                        </form>
+                        </form>
+                        <form th:method="GET" th:action="@{/computer}">
+                            <input class="buttum" type="submit" value="Computer!">
+                        </form>
+                        </form>
+                        <form th:method="GET" th:action="@{/order}">
+                            <input class="buttum" type="submit" value="Order!">
+                        </form>
+                        </form>
+                        <form th:method="GET" th:action="@{/store}">
+                            <input class="buttum" type="submit" value="Store!">
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

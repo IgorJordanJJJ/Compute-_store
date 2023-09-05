@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/order.css">
+    <title>Show Order</title>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <h1>Order</h1>
+                    <div th:if="${order.getId()!=null}" class="item-show">
+                        <div class="text-item-descr">Id:</div>
+                        <p class="text-item-value" th:text="${order.getId()}">Id</p>
+                    </div>
+                    <div th:if="${order.getPrice()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${order.getPrice()}">Price</p>
+                    </div>
+                    <h2>Computer</h2>
+                    <div class="item-show" th:if="${order.getComputerowner()!=null}">
+                        <div class="text-item-descr">Name:</div>
+                        <a class="text-item-link" th:href="@{/computer/{id}(id=${order.getComputerowner().getId()})}" th:text="${order.getComputerowner().getName()}">Name</a>
+                    </div>
+                    <h2>Master</h2>
+                    <div  class="item-show" th:if="${order.getMasterowner()!=null}">
+                        <div class="text-item-descr">Name:</div>
+                        <a class="text-item-link" th:href="@{/master/{id}(id=${order.getMasterowner().getId()})}" th:text="${order.getMasterowner().getName()}">Name</a>
+                    </div>
+                    <h2>Buyer</h2>
+                    <div th:if="${order.getBuyerowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <a class="text-item-link" th:href="@{/buyer/{id}(id=${order.getBuyerowner().getId()})}" th:text="${order.getBuyerowner().getName()}">Name</a>
+                    </div>
+                    <dev class="buttum-wrapper">
+                        <form th:method="DELETE" th:action="@{/order/{id}(id=${order.getId()})}">
+                            <input class="buttum" type="submit" value="Delete!">
+                        </form>
+                        <form th:method="GET" th:action="@{/order/{id}/edit(id=${order.getId()})}">
+                            <input class="buttum" type="submit" value="Edit!">
+                        </form>
+                    </dev>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

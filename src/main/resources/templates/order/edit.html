@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/order.css">
+    <title>Edit Order</title>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div>
+                        <h1>Edit <span class="text-item">Order</span></h1>
+                        <br>
+                        <form class="form" th:method="PATCH" th:action="@{/order/{id}(id=${order.getId()})}"
+                              th:object="${order}">
+                            <div>
+                                <label class="label-select" for="computer">Choose Computer: </label>
+                                <select class="select" th:object="${order}" th:field="*{computerowner}" id="computer">
+                                    <option th:each="computer :${computers}" th:value="${computer.getId()} "
+                                            th:text="${computer.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="master">Choose Master: </label>
+                                <select class="select" th:object="${order}" th:field="*{masterowner}" id="master">
+                                    <option th:each="master :${masters}" th:value="${master.getId()} "
+                                            th:text="${master.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="buyer">Choose Buyer: </label>
+                                <select class="select" th:object="${order}" th:field="*{buyerowner}" id="buyer">
+                                    <option th:each="buyer :${buyers}" th:value="${buyer.getId()} "
+                                            th:text="${buyer.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <label class="label" for="dateorder">Enter date (dd/mm/yyyy): </label>
+                            <input class="input" type="text" th:field="*{dateorder}" id="dateorder"/>
+                            <div style="color:red" th:if="${#fields.hasErrors('dateorder')}"
+                                 th:errors="*{dateorder}"></div>
+                            <br>
+                            <label class="label" for="dateorder">Enter price: </label>
+                            <input class="input" type="text" th:field="*{price}" id="price"/>
+                            <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+                            <br>
+                            <input class="buttum" type="submit" value="Update!"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

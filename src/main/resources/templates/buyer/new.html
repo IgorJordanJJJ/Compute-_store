@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/new.css">
+    <title>New Buyer</title>
+</head>
+<body>
+
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div class="text">
+                        <h1>Create new <span class="text-item">Buyer</span></h1>
+                    </div>
+                    <form class="form" th:method="POST" th:action="@{/buyer}" th:object="${buyer}">
+                        <label class="label" for="name">Enter name Buyer: </label>
+                        <input class="input" type="text" th:field="*{name}" id="name" placeholder="Name"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                        <br>
+                        <label class="label" for="surname">Enter surname Buyer: </label>
+                        <input class="input" type="text" th:field="*{surname}" id="surname" placeholder="Surname"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></div>
+                        <br>
+                        <label class="label" for="phonenumber">Enter phonenumber: </label>
+                        <input class="input" type="text" th:field="*{phonenumber}" id="phonenumber"
+                               placeholder="Phone Number"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('phonenumber')}"
+                             th:errors="*{phonenumber}"></div>
+                        <br>
+                        <label class="label" for="email">Enter email: </label>
+                        <input class="input" type="text" th:field="*{email}" id="email" placeholder="Email"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                        <br>
+                        <input class="buttum" type="submit" value="Update!"/>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

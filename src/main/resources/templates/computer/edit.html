@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/computer.css">
+    <title>Edit Computer</title>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div>
+                        <h1>Edit <span class="text-item">Computer</span></h1>
+                        <br>
+                        <form class="form" th:method="PATCH" th:action="@{/computer/{id}(id=${computer.getId()})}" th:object="${computer}">
+                            <div>
+                                <label class="label-select" for="cpu">Choose cpu: </label>
+                                <select class="select" th:object="${computer}" th:field="*{cpuowner}" id="cpu">
+                                    <option th:each="cpu :${cpus}" th:value="${cpu.getId()} " th:text="${cpu.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="ram">Choose ram: </label>
+                                <select class="select" th:object="${computer}" th:field="*{ramowner}" id="ram">
+                                    <option th:each="ram :${rams}" th:value="${ram.getId()} " th:text="${ram.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="board">Choose board: </label>
+                                <select class="select" th:object="${computer}" th:field="*{boardowner}" id="board">
+                                    <option th:each="board :${boards}" th:value="${board.getId()} " th:text="${board.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="powersupply">Choose Power Supply: </label>
+                                <select class="select" th:object="${computer}" th:field="*{powersupplyowner}" id="powersupply">
+                                    <option th:each="powersupply :${powersupplis}" th:value="${powersupply.getId()} " th:text="${powersupply.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="coolingsystem">Choose Cooling System: </label>
+                                <select class="select" th:object="${computer}" th:field="*{coolingsystemowner}" id="coolingsystem">
+                                    <option th:each="coolingsystem :${coolingsystems}" th:value="${coolingsystem.getId()} " th:text="${coolingsystem.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="cases">Choose Case: </label>
+                                <select class="select" th:object="${computer}" th:field="*{caseowner}" id="cases">
+                                    <option th:each="cases :${casess}" th:value="${cases.getId()} " th:text="${cases.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="mainmemory">Choose Main Memory: </label>
+                                <select class="select" th:object="${computer}" th:field="*{mainmemoryowner}" id="mainmemory">
+                                    <option th:each="mainmemory :${mainmemoris}" th:value="${mainmemory.getId()} " th:text="${mainmemory.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <div>
+                                <label class="label-select" for="graphiccard">Choose Graphi Ccard: </label>
+                                <select class="select" th:object="${computer}" th:field="*{graphiccardowner}" id="graphiccard">
+                                    <option th:each="graphiccard :${graphiccards}" th:value="${graphiccard.getId()} " th:text="${graphiccard.getName()}"></option>
+                                </select>
+                            </div>
+                            <br>
+                            <label class="label" for="name">Enter name computer: </label>
+                            <input class="input" type="text" th:field="*{name}" id="name"/>
+                            <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                            <br>
+                            <label class="label" for="price">Enter price: </label>
+                            <input class="input" type="text" th:field="*{price}" id="price"/>
+                            <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+                            <br>
+                            <label class="label" for="description">Enter description: </label>
+                            <input class="input" type="text" th:field="*{description}" id="description"/>
+                            <div style="color:red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+                            <br>
+                            <input class="buttum" type="submit" value="Update!"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

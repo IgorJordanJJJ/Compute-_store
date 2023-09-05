@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/computer.css">
+    <title>Show Computer</title>
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <h1>Computer</h1>
+                    <div class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getName()}">Name</p>
+                    </div>
+                    <div class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getPrice()}">Price</p>
+                    </div>
+                    <div class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getDescription()}">Description</p>
+                    </div>
+                    <h2>CPU</h2>
+                    <div th:if="${computer.getCpuowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getCpuowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getCpuowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getCpuowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getCpuowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getCpuowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>RAM</h2>
+                    <div th:if="${computer.getRamowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getRamowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getRamowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getRamowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getRamowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getRamowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Board</h2>
+                    <div th:if="${computer.getBoardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getBoardowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getBoardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getBoardowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getBoardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getBoardowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Power Supply</h2>
+                    <div th:if="${computer.getPowersupplyowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getPowersupplyowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getPowersupplyowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getPowersupplyowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getPowersupplyowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getPowersupplyowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Cooling System</h2>
+                    <div th:if="${computer.getCoolingsystemowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getCoolingsystemowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getCoolingsystemowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getCoolingsystemowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getCoolingsystemowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getCoolingsystemowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Case</h2>
+                    <div th:if="${computer.getCaseowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getCaseowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getCaseowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getCaseowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getCaseowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getCaseowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Main Memory</h2>
+                    <div th:if="${computer.getMainmemoryowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getMainmemoryowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getMainmemoryowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getMainmemoryowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getMainmemoryowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getMainmemoryowner().getDescription()}">Description</p>
+                    </div>
+                    <h2>Graphic Card</h2>
+                    <div th:if="${computer.getGraphiccardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Name:</div>
+                        <p class="text-item-value" th:text="${computer.getGraphiccardowner().getName()}">Name</p>
+                    </div>
+                    <div th:if="${computer.getGraphiccardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Price:</div>
+                        <p class="text-item-value" th:text="${computer.getGraphiccardowner().getPrice()}">Price</p>
+                    </div>
+                    <div th:if="${computer.getGraphiccardowner()!=null}" class="item-show">
+                        <div class="text-item-descr">Description:</div>
+                        <p class="text-item-value" th:text="${computer.getGraphiccardowner().getDescription()}">Description</p>
+                    </div>
+                    <dev class="buttum-wrapper">
+                        <form th:method="DELETE" th:action="@{/computer/{id}(id=${computer.getId()})}">
+                            <input class="buttum" type="submit" value="Delete!">
+                        </form>
+                        <form th:method="GET" th:action="@{/computer/{id}/edit(id=${computer.getId()})}">
+                            <input class="buttum" type="submit" value="Edit!">
+                        </form>
+                    </dev>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/new.css">
+    <title>New RAM</title>
+</head>
+<body>
+
+<div class="page">
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-brand">ADMIN</div>
+                <div class="header-logo">
+                    <img src="/media/computer-logo.png">
+                </div>
+                <div>
+                    <nav class="header-nav">
+                        <a class="header-nav-link active" href="/global">Admin</a>
+                        <a class="header-nav-link" href="/store">Buyer</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="card">
+                <div class="content">
+                    <div class="text">
+                        <h1>Create new <span class="text-item">RAM</span></h1>
+                    </div>
+                    <form class="form" th:method="POST" th:action="@{/ram}" th:object="${ram}">
+                        <label class="label" for="name">Enter name RAM: </label>
+                        <input class="input" type="text" th:field="*{name}" id="name" placeholder="Name"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+                        <br>
+                        <label class="label" for="price">Enter price: </label>
+                        <input class="input" type="text" th:field="*{price}" id="price" placeholder="Price"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+                        <br>
+                        <label class="label" for="description">Enter description: </label>
+                        <input class="input" type="text" th:field="*{description}" id="description"
+                               placeholder="Description"/>
+                        <div style="color:red" th:if="${#fields.hasErrors('description')}"
+                             th:errors="*{description}"></div>
+                        <br>
+                        <input class="buttum" type="submit" value="Create!"/>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="contacts">
+                <a class="contacts-link" href="mailto:info@igor@gmail.com">
+                    <img class="contacts-icon" src="/media/mail.png">
+                    @igor@gmail.com
+                </a>
+                <a class="contacts-link" href="tel:+791*****56">
+                    <img class="contacts-icon" src="/media/tel.png">
+                    +791*****56
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
